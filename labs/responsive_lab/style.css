@@ -49,15 +49,43 @@ header nav li a{
     border-bottom: 6px solid #f34949;
 }
 
-#home-menu h2{
-    background-image: url(images/menu-head.png);
-    background-repeat: no-repeat;
-    width: 156px;
-    height: 74px;
-    text-indent: -10000px;
-    margin: 0 auto;
-    position: relative;
-    top: -4px;
+@media (min-width: 701px) {#home-menu 
+    h2{
+        background-image: url(images/menu-head.png);
+        background-repeat: no-repeat;
+        width: 156px;
+        height: 74px;
+        text-indent: -10000px;
+        margin: 0 auto;
+        position: relative;
+        top: -4px;
+    }
+}
+
+@media (max-width: 400px) {
+    #home-menu h2{
+        background-image: url(images/menu-head-smallest.png);
+        background-repeat: no-repeat;
+        width: 156px;
+        height: 74px;
+        text-indent: -10000px;
+        margin: 0 auto;
+        position: relative;
+        top: -4px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 700px) {
+    #home-menu h2{
+        background-image: url(images/menu-head-small.png);
+        background-repeat: no-repeat;
+        width: 156px;
+        height: 74px;
+        text-indent: -10000px;
+        margin: 0 auto;
+        position: relative;
+        top: -4px;
+    }
 }
 
 #home-menu ul{
@@ -71,11 +99,31 @@ header nav li a{
     display: block;
 }
 
-#home-menu li{
-    float: left;
-    width: 42%;
-    padding: 0;
-    margin: 20px 0 20px 8%;
+@media (min-width: 701px) { /*laptop*/
+    #home-menu li{
+        float: left;
+        width: 42%;
+        padding: 0;
+        margin: 20px 0 20px 8%;
+    }
+}
+
+@media (max-width: 400px) { /*mobile*/
+    #home-menu li{
+        float: left;
+        width: 92%;
+        padding: 0;
+        margin: 20px 0 20px 8%;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 700px) { /*tablet*/
+    #home-menu li{
+        float: left;
+        width: 92%;
+        padding: 0;
+        margin: 20px 0 20px 8%;
+    }
 }
 
 #home-menu li:nth-child(odd){
@@ -122,11 +170,31 @@ header nav li a{
     padding: 0;
 }
 
-#featured li{
-    float: left;
-    width: 23%;
-    margin: 1%;
-    list-style-type: none; 
+@media (min-width: 701px) { /*laptop */
+    #featured li{
+        float: left;
+        width: 23%;
+        margin: 1%;
+        list-style-type: none; 
+    }
+}
+
+@media (max-width: 400px) { /*mobile */
+    #featured li{
+        float: left;
+        width: 92%;
+        margin: 1%;
+        list-style-type: none; 
+    }
+}
+
+@media (min-width: 401px) and (max-width: 700px) { /*tablet */
+    #featured li{
+        float: left;
+        width: 42%;
+        margin: 1%;
+        list-style-type: none; 
+    }
 }
 
 #featured li img{
