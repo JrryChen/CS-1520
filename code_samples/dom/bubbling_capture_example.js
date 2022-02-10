@@ -23,8 +23,10 @@ function tableHasBeenClicked() {
     console.log("The table has been clicked");
     if (onOff) {
         theTableElement.style.borderColor = "#FF0000";
+        tableCaption.style.color = "#FF0000";
     } else {
         theTableElement.style.borderColor = "#000000";
+        tableCaption.style.color = "#000000";
     }
     onOff = !onOff;
 }
@@ -52,18 +54,22 @@ function changeRowColor() {
     console.log("A table row has been clicked");
     
     // getting all the table data (also known as "row cells")
-    const children = this.getElementsByTagName("td");
+    const children = this.getElementsByTagName("td"); //use "this" to get the calling row's cells
 
     // loop over the cells and change their background
-    ???
+    for(let i = children.length - 1; i >= 0; i--) {
+        children[i].style.backgroundColor = "#0000ee";
+    }
 }
 
 function addListenerForTheCells() {
     // getting all the table data (cells)
-    const cells = ???
+    const cells = document.getElementsByTagName("td");
 
     // looping over the cells and add listeners to all of them
-    ???
+    for(let cell of cells) {
+        cell.addEventListener("click", changeCellBackgroundColor);
+    }
 }
 
 function changeCellBackgroundColor() {
