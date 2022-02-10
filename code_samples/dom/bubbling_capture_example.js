@@ -46,7 +46,9 @@ function addListenerForTheRows() {
 
     // looping over the rows and placing event listeners to them
     for(let row of rows) {
-        row.addEventListener("click", changeRowColor);
+        //row.addEventListener("click", changeRowColor); currently being excecuted during bubling, overriding the green in the cell
+        row.addEventListener("click", changeRowColor, true);
+
     }
 }
 
