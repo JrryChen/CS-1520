@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Storage</title>
-    <!-- add CSS here -->>
-    <!-- add script here -->>
+    <link rel = "stylesheet" href = "LocalStorage.css" />
+    <script type="text/javascript" src="LocalStorage.js"> </script>
 </head>
 
 <body>
@@ -19,11 +19,15 @@
     </fieldset>
     <fieldset>
         <legend> Delete Data </legend>
-        <!-- add code here -->
+        <input  type="text"   id="deleteKeyTextInput"   placeholder="Enter key...">
+        <input  type="text"   id="deleteValueTextInput" placeholder="Enter Value...">
+        <button type="button" id="clearStorageButton"> Insert Data </button>
     </fieldset>
     <fieldset>
         <legend> Local Storage </legend>
-        <!-- add code here -->>
+        <div id = "outputListPlaceHolder">
+
+        </div>
     </fieldset>
 </body>
 
