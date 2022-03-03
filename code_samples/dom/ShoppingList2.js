@@ -4,6 +4,8 @@ function addListeners() {
     document.getElementById("addNewItemButton").addEventListener("click", addNewItem);
     document.getElementById("deleteSelectedItemsButton").addEventListener("click", deleteSelectedItems);
     document.getElementById("selectAllItemsButton").addEventListener("click", selectAllItems);
+    const title = document.getElementById("title");
+    title.setAttribute("style", "color: blue");
 }
 
 // add new item
