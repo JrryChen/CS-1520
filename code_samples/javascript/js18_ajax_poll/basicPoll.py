@@ -12,7 +12,7 @@ def default():
 @app.route("/new_item", methods=["POST"])
 def add():
 	items.append([request.form["one"], request.form["two"], request.form["three"]])
-	return json.dumps(items)
+	return json.dumps(items) # dumps converts items to JSON
 
 @app.route("/items")
 def get_items():

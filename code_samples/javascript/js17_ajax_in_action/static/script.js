@@ -1,14 +1,16 @@
 function makePost() {
+	console.log("creating and sending the post request");
+
 	let xhr = new XMLHttpRequest();
 
-	if (!xhr) {
+	if (!xhr) { //checks if xhr is null
 		console.log("Could not create an XMLHttpRequest instance");
 		return false;
 	}
 			
-	xhr.onreadystatechange = () => logResponse(xhr);
+	xhr.onreadystatechange = () => logResponse(xhr); //every time xhr changes state, logResponse is called
 	
-	xhr.open("POST", "/new_item");
+	xhr.open("POST", "/new_item"); //sends a post request to the server to /new_item
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 	var data;

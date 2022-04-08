@@ -1,9 +1,9 @@
 let timeoutID;
-let timeout = 45000;
+let timeout = 15000;
 
 function setup() {
 	document.getElementById("theButton").addEventListener("click", makePost);
-	timeoutID = window.setTimeout(poller, timeout);
+	timeoutID = window.setTimeout(poller, timeout); //when time is up, call poller, every 15 seconds(15000 ms)
 }
 
 function makePost() {
@@ -12,15 +12,15 @@ function makePost() {
 	const two = document.getElementById("b").value
 	const three = document.getElementById("c").value
 	
-	fetch("/new_item", {
-			method: "post",
-			headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" },
-			body: `one=${one}&two=${two}&three=${three}`
-		})
+	fetch("/new_item", { //go to /new_item post request
+			method: "post", //post request
+			headers: { "Content-type": "application/x-www-form-urlencoded; charset=UTF-8" }, //form data
+			body: `one=${one}&two=${two}&three=${three}` //what is sent
+		}) //a string that looks like JSON
 		.then((response) => {
-			return response.json();
+			return response.json(); //returns a promise to .then(result)
 		})
-		.then((result) => {
+		.then((result) => { //update when the two promises are resolved
 			updateTable(result);
 			clearInput();
 		})
@@ -31,8 +31,8 @@ function makePost() {
 
 function poller() {
 	console.log("Polling for new items");
-	fetch("/items")
-		.then((response) => {
+	fetch("/items") //polls for data
+		.then((response) => { //puts the data in response
 			return response.json();
 		})
 		.then(updateTable)

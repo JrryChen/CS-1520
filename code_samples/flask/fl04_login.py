@@ -27,7 +27,7 @@ curProfile = """<!DOCTYPE html>
 		<title>Your profile!</title>
 	</head>
 	<body>
-		Welcome back!
+		Welcome back to your profile!
 	</body>
 </html>
 """
@@ -73,7 +73,7 @@ def profile(username=None):
                     return curProfile
                 else:
                     print("password is incorrect")
-                    abort(401)
+                    abort(401)											
     else:
         print("GET request")
         print("checking if the user is one of our clients")
@@ -85,4 +85,4 @@ def profile(username=None):
             abort(404)
 	
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)
